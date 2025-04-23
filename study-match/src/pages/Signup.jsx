@@ -17,7 +17,7 @@ const Signup = () => {
     setError('');
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/home');
+      navigate('/home',{state: {email: email, password: password}});
     } catch (err) {
       setError(err.message);
     }
